@@ -27,6 +27,6 @@
     <p><%= request.getAttribute("definition") %></p>
     <h3>Installation Guide</h3>
     <pre><%= request.getAttribute("installation") %></pre>
-
+<% } %>
 </body>
 </html>
