@@ -14,32 +14,32 @@ public class CourseServlet extends HttpServlet {
         switch (course) {
             case "Git":
                 definition = "Git is a distributed version control system.";
-                installation = "Installation steps for Git...";
+                installation = "Step 1: sudo apt-get update\nStep 2: sudo apt install git";
                 break;
             case "Jenkins":
                 definition = "Jenkins is a popular automation server.";
-                installation = "Installation steps for Jenkins...";
+                installation = "Step 1: sudo apt-get update\nStep 2: sudo apt install jenkins";
                 break;
             case "Ansible":
                 definition = "Ansible is an open-source software provisioning, configuration management, and application-deployment tool.";
-                installation = "Installation steps for Ansible...";
+                installation = "Step 1: sudo apt-get update\nStep 2: sudo apt install ansible";
                 break;
             case "Terraform":
                 definition = "Terraform is an infrastructure as code tool for building, changing, and versioning infrastructure safely and efficiently.";
-                installation = "Installation steps for Terraform...";
+                installation = "Step 1: sudo apt-get update\n(Additional installation steps for Terraform)";
                 break;
             case "Docker":
                 definition = "Docker is a platform used to develop, ship, and run applications inside containers.";
-                installation = "Installation steps for Docker...";
+                installation = "Step 1: sudo apt-get update\nStep 2: sudo apt install docker.io";
                 break;
             case "Kubernetes":
                 definition = "Kubernetes is an open-source container orchestration platform.";
-                installation = "Installation steps for Kubernetes...";
+                installation = "Step 1: sudo apt-get update\n(Additional installation steps for Kubernetes)";
                 break;
         }
 
         request.setAttribute("definition", definition);
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.setAttribute("installation", installation);
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }
