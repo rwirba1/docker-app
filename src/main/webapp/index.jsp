@@ -23,14 +23,10 @@
 <br>
 
 <% if (request.getAttribute("definition") != null) { %>
-    <h3>Definition:</h3>
+    <h3>Definition</h3>
     <p><%= request.getAttribute("definition") %></p>
-<% } %>
-
-<% if (request.getAttribute("installation") != null) { %>
-    <h3>Installation Steps on Ubuntu 20.04:</h3>
-    <p><%= request.getAttribute("installation") %></p>
-<% } %>
+    <h3>Installation Guide</h3>
+    <pre><%= request.getAttribute("installation") %></pre>
 
 </body>
 </html>
