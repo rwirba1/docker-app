@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Welcome To M.I Tech!</h1>
-<img src="images/student_laptop.jpg" alt="A student with a laptop">
+<img src="images/cartoon.jpg" alt="A student with a laptop">
 <form action="course" method="post">
     <select name="course">
         <option value="Git">Git</option>
