@@ -11,12 +11,12 @@
 <h2>Select Course For Details</h2>
 <form action="course" method="post">
     <select name="course">
-        <option value="Git">Git</option>
-        <option value="Jenkins">Jenkins</option>
-        <option value="Ansible">Ansible</option>
-        <option value="Terraform">Terraform</option>
-        <option value="Docker">Docker</option>
-        <option value="Kubernetes">Kubernetes</option>
+        <option value="Git" <%= "Git".equals(request.getParameter("course")) ? "selected" : "" %>>Git</option>
+        <option value="Jenkins" <%= "Jenkins".equals(request.getParameter("course")) ? "selected" : "" %>>Jenkins</option>
+        <option value="Ansible" <%= "Ansible".equals(request.getParameter("course")) ? "selected" : "" %>>Ansible</option>
+        <option value="Terraform" <%= "Terraform".equals(request.getParameter("course")) ? "selected" : "" %>>Terraform</option>
+        <option value="Docker" <%= "Docker".equals(request.getParameter("course")) ? "selected" : "" %>>Docker</option>
+        <option value="Kubernetes" <%= "Kubernetes".equals(request.getParameter("course")) ? "selected" : "" %>>Kubernetes</option>
     </select>
     <input type="submit" value="Get Definition & Installation Steps">
 </form>
