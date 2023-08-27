@@ -281,7 +281,7 @@ Contact Us Form
     </div>
 </div>
 
-Contact Us Form
+<!-- Contact Us Form -->
 <div style="position: fixed; bottom: 10px; right: 10px;">
     <h2>Contact Us</h2>
     <form action="/contact" method="post">
