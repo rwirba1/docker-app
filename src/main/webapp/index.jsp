@@ -1,21 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Welcome To M.I Tech!</title>
+    <title>Unleash Efficiency, Collaboration, and High-Quality Delivery</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            /* Adding the background image */
-            background-image: url('images/background.jpg');
-            background-size: cover;      /* Cover the viewport */
-            background-repeat: no-repeat; /* Do not repeat the image */
-            background-position: center;  /* Center the image */
-            background-attachment: fixed; /* Fixed background (doesn't scroll with the page) */            
+            background-image: url("bk_ground.png");
+            background-repeat: repeat;
+            background-size: auto;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .logo {
+            text-align: center;
+            margin-top: 20px;            
         }
 
         .header {
@@ -62,9 +60,9 @@
 </head>
 <body>
 
-<div class="header">
-    <div></div>
-    <h1 class="main-title">Welcome To M.I Tech!</h1>
+<div class="logo">
+    <img src="logo.png" width="200" height="100" alt="Company Logo">
+    <h1 class="main-title">Unleash Efficiency, Collaboration, and High-Quality Delivery!</h1>
     <div>
         <span class="link" id="aboutLink">About M.I Tech LLC</span> | 
         <span class="link" id="careersLink">Careers</span>
@@ -96,12 +94,12 @@
     </div>
 
     <div class="about-content" id="aboutContent">
-        <h2>Welcome to M.I Tech</h2>
+        <h2>Unleash Efficiency, Collaboration, and High-Quality Delivery</h2>
         <p>Where Technology and Expertise Intersect!</p>
         <p>Our Two-Fold Mission:</p>
         <ol>
-           <li>DevOps Support: We understand that each business is unique, and so are its technological challenges. Our seasoned team boasts a rich tapestry of experience in offering bespoke DevOps support. From continuous integration, continuous deployment, to state-of-the-art infrastructure management, we bring the best of tech solutions to bridge any operational gaps. Our aim? To help your business run seamlessly, scale effortlessly, and innovate constantly.</li>
-           <li>Education & Training: As firm believers in sharing knowledge, we are equally passionate about fostering the next generation of DevOps engineers. Our curated courses, delivered by industry stalwarts, are designed not just to instruct but to inspire. Whether you're a newbie with an interest in DevOps or an IT professional keen to hone your skills, our doors are always open. Learn, grow, and be a part of the DevOps revolution!...</li>
+           <li>DevOps Support: We understand that each business is unique, and so are its technological challenges. Our seasoned team boasts a rich tapestry of experience in offering bespoke DevOps support...</li>
+           <li>Education & Training: As firm believers in sharing knowledge, we are equally passionate about fostering the next generation of DevOps engineers...</li>
         </ol>
     </div>
 </div>
