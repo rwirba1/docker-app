@@ -40,7 +40,7 @@
         <textarea id="details" name="details" rows="4" required></textarea><br><br>
 
         <button type="submit">
-            <img src="path_to_your_icon_image.jpg" alt="Send" style="width: 20px; height: 20px;">
+            <img src="images/send.jpg" alt="Send" style="width: 20px; height: 20px;">
             Send
         </button>
     </form>
