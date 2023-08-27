@@ -4,7 +4,7 @@
     <title>Unleash Efficiency, Collaboration, and High-Quality Delivery</title>
     <style>
         body {
-            background-image: url("bk_ground.png");
+            background-image: url("images/bk_ground.png");
             background-repeat: repeat;
             background-size: auto;
             position: relative;
@@ -16,13 +16,6 @@
             margin-top: 20px;            
         }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 50px;
-            align-items: center;
-        }
-
         .main-title {
             text-align: center;
             margin-top: 2vh;
@@ -31,6 +24,7 @@
         .link {
             cursor: pointer;
             text-decoration: underline;
+            margin-left: 15px;
         }
 
         .link:hover {
@@ -55,14 +49,20 @@
 
         .course-section {
             width: 45%;
-        }    
+        }
+
         #topRight {
             position: absolute;
             top: 10px;
             right: 10px;
         }
+        
         #homeButton {
-            display: none;  /* Initially hidden */            
+            display: none;  /* Initially hidden */
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
@@ -71,10 +71,11 @@
 <div class="logo">
     <img src="images/logo.png" width="200" height="100" alt="Company Logo">
     <h1 class="main-title">Unleash Efficiency, Collaboration, and High-Quality Delivery!</h1>
-<div>
+</div>
+
+<div id="topRight">
     <span class="link" id="aboutLink">About M.I Tech LLC</span> 
     <span class="link" id="careersLink">Careers</span>
-</div>
 </div>
 
 <div class="content-section">
@@ -131,7 +132,7 @@
 <button id="homeButton" onclick="showHomePage()">Home</button>
 
 <script>
-    function showHomePage() {    
+    function showHomePage() {
         document.getElementById('aboutContent').style.display = 'none';
         document.getElementById('homeButton').style.display = 'none';
         document.querySelector('.logo').style.display = 'block';
@@ -143,6 +144,15 @@
         document.querySelector('.logo').style.display = 'none';
         document.querySelector('.content-section').style.display = 'none';
         document.getElementById('homeButton').style.display = 'block';  // Show the home button
+    });
+
+    // Added for Careers, but currently it doesn't do anything since we don't have a careers section.
+    // This can be adjusted when a careers section/content is added.
+    document.getElementById('careersLink').addEventListener('click', function() {
+        document.querySelector('.logo').style.display = 'none';
+        document.querySelector('.content-section').style.display = 'none';
+        document.getElementById('homeButton').style.display = 'block';  // Show the home button
+        // You can add code here to show the careers content when it's available.
     });
 </script>
 
