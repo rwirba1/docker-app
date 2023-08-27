@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             /* Adding the background image */
-            background-image: url('images/background.jpg');
+            background-image: url('/images/background.jpg');
             background-size: cover;      /* Cover the viewport */
             background-repeat: no-repeat; /* Do not repeat the image */
             background-position: center;  /* Center the image */
