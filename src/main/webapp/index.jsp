@@ -47,7 +47,7 @@
             justify-content: space-between;
         }
 
-        .course-section {
+        .tool-section {
             width: 45%;
         }
 
@@ -79,17 +79,17 @@
 </div>
 
 <div class="content-section">
-    <div class="course-section">
+    <div class="tool-section">
         <img src="images/cartoon.jpg" alt="A student with a laptop" style="display:block; margin:auto;">
-        <h2>Select Course For Details</h2>
-        <form action="course" method="post">
-            <select name="course">
-                <option value="Git" <%= "Git".equals(request.getParameter("course")) ? "selected" : "" %>>Git</option>
-                <option value="Jenkins" <%= "Jenkins".equals(request.getParameter("course")) ? "selected" : "" %>>Jenkins</option>
-                <option value="Ansible" <%= "Ansible".equals(request.getParameter("course")) ? "selected" : "" %>>Ansible</option>
-                <option value="Terraform" <%= "Terraform".equals(request.getParameter("course")) ? "selected" : "" %>>Terraform</option>
-                <option value="Docker" <%= "Docker".equals(request.getParameter("course")) ? "selected" : "" %>>Docker</option>
-                <option value="Kubernetes" <%= "Kubernetes".equals(request.getParameter("course")) ? "selected" : "" %>>Kubernetes</option>
+        <h2>Select tool For Details</h2>
+        <form action="tool" method="post">
+            <select name="tool">
+                <option value="Git" <%= "Git".equals(request.getParameter("tool")) ? "selected" : "" %>>Git</option>
+                <option value="Jenkins" <%= "Jenkins".equals(request.getParameter("tool")) ? "selected" : "" %>>Jenkins</option>
+                <option value="Ansible" <%= "Ansible".equals(request.getParameter("tool")) ? "selected" : "" %>>Ansible</option>
+                <option value="Terraform" <%= "Terraform".equals(request.getParameter("tool")) ? "selected" : "" %>>Terraform</option>
+                <option value="Docker" <%= "Docker".equals(request.getParameter("tool")) ? "selected" : "" %>>Docker</option>
+                <option value="Kubernetes" <%= "Kubernetes".equals(request.getParameter("tool")) ? "selected" : "" %>>Kubernetes</option>
             </select>
             <input type="submit" value="Get Definition & Installation Steps">
         </form>
@@ -166,7 +166,7 @@ Contact Us Form
     <title>Unleash Efficiency, Collaboration, and High-Quality Delivery</title>
     <style>
         body {
-            background-image: url("bk_ground.png");
+            background-image: url("images/bk_ground.png");
             background-repeat: repeat;
             background-size: auto;
             position: relative;
@@ -194,7 +194,7 @@ Contact Us Form
         }
 
         /* hidden by default */
-        .about-content {
+        .about-content, .tool-content {
             display: none;
             width: 70%;
             margin: 20px auto;
@@ -209,7 +209,7 @@ Contact Us Form
             justify-content: space-between;
         }
 
-        .course-section {
+        .tool-section {
             width: 45%;
         }
 
@@ -242,18 +242,27 @@ Contact Us Form
 </div>
 
 <div class="content-section">
-    <div class="course-section">
+    <div class="tool-section">
         <img src="images/cartoon.jpg" alt="A student with a laptop" style="display:block; margin:auto;">
-        <h2>Select Course For Details</h2>
-        <form action="course" method="post">
-            <select name="course">
-                <!-- ... remaining options as is ... -->
+        <h2>Select Tool For Details</h2>
+        <form action="tool" method="post">
+            <select name="tool">
+                <option value="Git" <%= "Git".equals(request.getParameter("tool")) ? "selected" : "" %>>Git</option>
+                <option value="Jenkins" <%= "Jenkins".equals(request.getParameter("tool")) ? "selected" : "" %>>Jenkins</option>
+                <option value="Ansible" <%= "Ansible".equals(request.getParameter("tool")) ? "selected" : "" %>>Ansible</option>
+                <option value="Terraform" <%= "Terraform".equals(request.getParameter("tool")) ? "selected" : "" %>>Terraform</option>
+                <option value="Docker" <%= "Docker".equals(request.getParameter("tool")) ? "selected" : "" %>>Docker</option>
+                <option value="Kubernetes" <%= "Kubernetes".equals(request.getParameter("tool")) ? "selected" : "" %>>Kubernetes</option>
             </select>
             <input type="submit" value="Get Definition & Installation Steps">
         </form>
         <br>
         <% if (request.getAttribute("definition") != null) { %>
-            <div class="about-content" id="courseContent">
+            <script>
+                document.querySelector('.logo').style.display = 'none';
+                document.querySelector('.content-section').style.display = 'none';
+            </script>
+            <div class="tool-content" id="toolContent">
                 <h3>Definition</h3>
                 <p><%= request.getAttribute("definition") %></p>
                 <h3>Installation Guide</h3>
@@ -263,20 +272,36 @@ Contact Us Form
     </div>
 
     <div class="about-content" id="aboutContent">
-        <!-- ... about content as is ... -->
+        <p>Where Technology and Expertise Intersect!</p>
+        <p>Our Two-Fold Mission:</p>
+        <ol>
+           <li>DevOps Support: We understand that each business is unique, and so are its technological challenges. Our seasoned team boasts a rich tapestry of experience in offering bespoke DevOps support...</li>
+           <li>Education & Training: As firm believers in sharing knowledge, we are equally passionate about fostering the next generation of DevOps engineers...</li>
+        </ol>
     </div>
 </div>
 
-<!-- Contact Us Form -->
+Contact Us Form
 <div style="position: fixed; bottom: 10px; right: 10px;">
-    <!-- ... form content as is ... -->
+    <h2>Contact Us</h2>
+    <form action="/contact" method="post">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="details">Details:</label><br>
+        <textarea id="details" name="details" rows="4" required></textarea><br><br>
+
+        <button type="submit">
+            <img src="images/send.jpg" alt="Send" style="width: 20px; height: 20px;">
+            Send
+        </button>
+    </form>
 </div>
 
 <script>
     function showHomePage() {
         document.getElementById('aboutContent').style.display = 'none';
-        if(document.getElementById('courseContent')){
-            document.getElementById('courseContent').style.display = 'none';
+        if(document.getElementById('toolContent')){
+            document.getElementById('toolContent').style.display = 'none';
         }
         document.querySelector('.logo').style.display = 'block';
         document.querySelector('.content-section').style.display = 'block';
