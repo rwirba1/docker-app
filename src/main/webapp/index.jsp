@@ -55,18 +55,26 @@
 
         .course-section {
             width: 45%;
+        }    
+        #topRight {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        #homeButton {
+            display: none;  /* Initially hidden */            
         }
     </style>
 </head>
 <body>
 
 <div class="logo">
-    <img src="logo.png" width="200" height="100" alt="Company Logo">
+    <img src="images/logo.png" width="200" height="100" alt="Company Logo">
     <h1 class="main-title">Unleash Efficiency, Collaboration, and High-Quality Delivery!</h1>
-    <div>
-        <span class="link" id="aboutLink">About M.I Tech LLC</span> | 
-        <span class="link" id="careersLink">Careers</span>
-    </div>
+<div>
+    <span class="link" id="aboutLink">About M.I Tech LLC</span> 
+    <span class="link" id="careersLink">Careers</span>
+</div>
 </div>
 
 <div class="content-section">
@@ -120,9 +128,21 @@
     </form>
 </div>
 
+<button id="homeButton" onclick="showHomePage()">Home</button>
+
 <script>
+    function showHomePage() {    
+        document.getElementById('aboutContent').style.display = 'none';
+        document.getElementById('homeButton').style.display = 'none';
+        document.querySelector('.logo').style.display = 'block';
+        document.querySelector('.content-section').style.display = 'block';
+    }
+
     document.getElementById('aboutLink').addEventListener('click', function() {
         document.getElementById('aboutContent').style.display = 'block';
+        document.querySelector('.logo').style.display = 'none';
+        document.querySelector('.content-section').style.display = 'none';
+        document.getElementById('homeButton').style.display = 'block';  // Show the home button
     });
 </script>
 
