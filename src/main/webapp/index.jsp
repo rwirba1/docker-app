@@ -28,5 +28,23 @@
     <h3>Installation Guide</h3>
     <pre><%= request.getAttribute("installation") %></pre>
 <% } %>
+
+<!-- Contact Us Form -->
+<div style="position: fixed; bottom: 10px; right: 10px;">
+    <h2>Contact Us For Inquiry</h2>
+    <form action="/contact" method="post">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="details">Details:</label><br>
+        <textarea id="details" name="details" rows="4" required></textarea><br><br>
+
+        <button type="submit">
+            <img src="path_to_your_icon_image.jpg" alt="Send" style="width: 20px; height: 20px;">
+            Send
+        </button>
+    </form>
+</div>
+
 </body>
 </html>

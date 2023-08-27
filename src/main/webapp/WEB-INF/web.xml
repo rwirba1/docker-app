@@ -19,6 +19,18 @@
         <url-pattern>/course</url-pattern>
     </servlet-mapping>
 
+    <!-- Servlet definition for ContactServlet -->
+    <servlet>
+        <servlet-name>ContactServlet</servlet-name>
+        <servlet-class>com.techapp.ContactServlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet mapping for ContactServlet -->
+    <servlet-mapping>
+        <servlet-name>ContactServlet</servlet-name>
+        <url-pattern>/contact</url-pattern>
+    </servlet-mapping>
+
     <!-- Welcome file list -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
