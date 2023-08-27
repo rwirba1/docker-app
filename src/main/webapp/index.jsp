@@ -308,6 +308,7 @@ Contact Us Form
     }
 
     document.getElementById('aboutLink').addEventListener('click', function() {
+        console.log("About link clicked!");
         document.getElementById('aboutContent').style.display = 'block';
         document.querySelector('.logo').style.display = 'none';
         document.querySelector('.content-section').style.display = 'none';
