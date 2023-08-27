@@ -16,7 +16,7 @@
     <!-- Servlet mapping -->
     <servlet-mapping>
         <servlet-name>CourseServlet</servlet-name>
-        <url-pattern>/course</url-pattern>
+        <url-pattern>/tool</url-pattern>
     </servlet-mapping>
 
     <!-- Servlet definition for ContactServlet -->

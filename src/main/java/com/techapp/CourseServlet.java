@@ -7,11 +7,11 @@ import java.io.*;
 public class CourseServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String course = request.getParameter("course");
+        String tool = request.getParameter("tool");
         String definition = "";
         String installation = "";
 
-        switch (course) {
+        switch (tool) {
             case "Git":
                 definition = "Git is a distributed version control system.";
                 installation = "Step 1: sudo apt-get update\nStep 2: sudo apt install git";
