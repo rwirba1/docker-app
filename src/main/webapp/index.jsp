@@ -194,7 +194,7 @@ Contact Us Form
         }
 
         /* hidden by default */
-        .about-content, .tool-content {
+        .about-content, .course-content {
             display: none;
             width: 70%;
             margin: 20px auto;
@@ -209,7 +209,7 @@ Contact Us Form
             justify-content: space-between;
         }
 
-        .tool-section {
+        .course-section {
             width: 45%;
         }
 
@@ -242,17 +242,17 @@ Contact Us Form
 </div>
 
 <div class="content-section">
-    <div class="tool-section">
+    <div class="course-section">
         <img src="images/cartoon.jpg" alt="A student with a laptop" style="display:block; margin:auto;">
-        <h2>Select Tool For Details</h2>
-        <form action="tool" method="post">
-            <select name="tool">
-                <option value="Git" <%= "Git".equals(request.getParameter("tool")) ? "selected" : "" %>>Git</option>
-                <option value="Jenkins" <%= "Jenkins".equals(request.getParameter("tool")) ? "selected" : "" %>>Jenkins</option>
-                <option value="Ansible" <%= "Ansible".equals(request.getParameter("tool")) ? "selected" : "" %>>Ansible</option>
-                <option value="Terraform" <%= "Terraform".equals(request.getParameter("tool")) ? "selected" : "" %>>Terraform</option>
-                <option value="Docker" <%= "Docker".equals(request.getParameter("tool")) ? "selected" : "" %>>Docker</option>
-                <option value="Kubernetes" <%= "Kubernetes".equals(request.getParameter("tool")) ? "selected" : "" %>>Kubernetes</option>
+        <h2>Select Course For Details</h2>
+        <form action="course" method="post">
+            <select name="course">
+                <option value="Git" <%= "Git".equals(request.getParameter("course")) ? "selected" : "" %>>Git</option>
+                <option value="Jenkins" <%= "Jenkins".equals(request.getParameter("course")) ? "selected" : "" %>>Jenkins</option>
+                <option value="Ansible" <%= "Ansible".equals(request.getParameter("course")) ? "selected" : "" %>>Ansible</option>
+                <option value="Terraform" <%= "Terraform".equals(request.getParameter("course")) ? "selected" : "" %>>Terraform</option>
+                <option value="Docker" <%= "Docker".equals(request.getParameter("course")) ? "selected" : "" %>>Docker</option>
+                <option value="Kubernetes" <%= "Kubernetes".equals(request.getParameter("course")) ? "selected" : "" %>>Kubernetes</option>
             </select>
             <input type="submit" value="Get Definition & Installation Steps">
         </form>
@@ -262,7 +262,7 @@ Contact Us Form
                 document.querySelector('.logo').style.display = 'none';
                 document.querySelector('.content-section').style.display = 'none';
             </script>
-            <div class="tool-content" id="toolContent">
+            <div class="course-content" id="courseContent">
                 <h3>Definition</h3>
                 <p><%= request.getAttribute("definition") %></p>
                 <h3>Installation Guide</h3>
@@ -300,8 +300,8 @@ Contact Us Form
 <script>
     function showHomePage() {
         document.getElementById('aboutContent').style.display = 'none';
-        if(document.getElementById('toolContent')){
-            document.getElementById('toolContent').style.display = 'none';
+        if(document.getElementById('courseContent')){
+            document.getElementById('courseContent').style.display = 'none';
         }
         document.querySelector('.logo').style.display = 'block';
         document.querySelector('.content-section').style.display = 'block';
