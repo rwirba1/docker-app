@@ -148,18 +148,18 @@
             case 'Git':
                 details = `
                <h3>Git</h3>
-               Git is a distributed version control system (VCS) that helps track changes in source code during software development. 
+               Git is a distributed version control system (VCS) that helps track changes in source code during software development.  It is designed for coordinating work among programmers, but it can be used to track changes in any set of files.  
                <ul>
-                   <li><strong>Distributed Version Control:</strong> Every developer's working copy of the code is also a repository that can contain the full history of all changes.</li>
-                   <li><strong>Branching and Merging:</strong> Efficient handling of branches and merges.</li>
-                   <li><strong>Speed:</strong> Git is designed with performance in mind.</li>
-                   <li><strong>Data Integrity:</strong> Every file and commit is check-summed using the SHA-1 hash algorithm.</li>
-                   <li><strong>Staging Area:</strong> An intermediate area for changes before committing them.</li>
-                   <li><strong>Non-linear Development:</strong> Git supports non-linear development.</li>
-                   <li><strong>Collaboration:</strong> Git’s distributed nature allows multiple developers to work concurrently.</li>
-                   <li><strong>Open Source:</strong> Git is free and open-source software.</li>
+                   <li><strong>Distributed Version Control:</strong> Every developer's working copy of the code is also a repository that can contain the full history of all changes. This model allows for more flexibility and collaborative workflows.</li>
+                   <li><strong>Branching and Merging:</strong> Efficient handling of branches and merges efficiently. Developers can easily create branches to work on new features or bug fixes and can merge these branches back into the main codebase when the work is complete..</li>
+                   <li><strong>Speed:</strong> Git is designed with performance in mind. Operations such as branching and merging are extremely fast, which encourages workflows that branch often, even for small changes.</li>
+                   <li><strong>Data Integrity:</strong> Every file and commit is check-summed using the SHA-1 hash algorithm, which guarantees the consistency and integrity of data over time.</li>
+                   <li><strong>Staging Area:</strong> An intermediate area for changes before committing them to the repository. This allows developers to craft their commits for clarity and purpose.</li>
+                   <li><strong>Non-linear Development:</strong> Git supports non-linear development through its robust handling of branches, allowing multiple paths of development to occur simultaneously.</li>
+                   <li><strong>Collaboration:</strong> Git’s distributed nature allows multiple developers to work concurrently. Combined with platforms like GitHub or GitLab, it provides a centralized place for collaboration, code review, issue tracking, and more.</li>
+                   <li><strong>Open Source:</strong> Git is free and open-source software. Its development is supported by a vast community that continuously works on improvements and new features.</li>
                </ul>
-               Git was initially designed and developed by Linus Torvalds in 2005.
+               Git was initially designed and developed by Linus Torvalds in 2005, , for the development of the Linux kernel itself. Since then, it has gained widespread acceptance in the software community, making it the de facto standard for version control in many projects and organizations.
                <br><br>
                <strong>Installation Guide for Ubuntu:</strong><br>
                1. sudo apt update<br>
