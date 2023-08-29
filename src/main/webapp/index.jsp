@@ -95,7 +95,7 @@
 <div class="content-section">
     <div class="course-section">
         <img src="images/cartoon.jpg" alt="A student with a laptop" style="display:block; margin:auto;">
-        <h2>Select Course For Details</h2>
+        <h2>Select DevOps Tool For Details</h2>
         <select name="course" id="courseSelect" onchange="displayCourseDetails()">
             <option value="" selected>Select a course...</option>
             <option value="Git">Git</option>
@@ -109,7 +109,7 @@
         <div class="course-content" id="courseContent" style="display: none;">
             <h3>Definition</h3>
             <p id="courseDefinition"></p>
-            <h3>Installation Guide</h3>
+            <h3 style="white-space: nowrap;">Installation Guide</h3>
             <pre id="courseInstallation"></pre>
         </div>
     </div>            
@@ -222,7 +222,28 @@
         } else {
             document.getElementById('courseContent').style.display = 'none';
         }
-    }    
+    }
+    function showHomePage() {
+        document.getElementById('aboutContent').style.display = 'none';
+        if(document.getElementById('courseContent')){
+            document.getElementById('courseContent').style.display = 'none';
+        }
+        document.querySelector('.logo').style.display = 'block';
+        document.querySelector('.content-section').style.display = 'block';
+        document.getElementById('topRight').style.display = 'block';
+    }
+
+    document.getElementById('aboutLink').addEventListener('click', function() {
+        document.getElementById('aboutContent').style.display = 'block';
+        document.querySelector('.logo').style.display = 'none';
+        document.querySelector('.content-section').style.display = 'none';
+        document.getElementById('topRight').style.display = 'none';
+    });
+
+    // Placeholder for Careers. Can be filled in later.
+    document.getElementById('careersLink').addEventListener('click', function() {
+        // ... functionality to display careers content ...
+    });
 </script>
 
 </body>
