@@ -95,10 +95,10 @@
 
         <div class="course-content" id="courseContent">
             <!-- This will be populated dynamically -->
-            <!-- <h3>Definition</h3>
+            <h3>Definition</h3>
             <p id="courseDefinition"></p>
             <h3>Installation Guide</h3>
-            <div id="courseInstallation"></div> -->
+            <div id="courseInstallation"></div>
         </div>
     </div>            
   
