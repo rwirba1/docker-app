@@ -92,15 +92,17 @@
             <option value="Docker">Docker</option>
             <option value="Kubernetes">Kubernetes</option>
         </select>
+        <div id="toolDetails"></div>
+    </div>>    
 
-        <div class="course-content" id="courseContent">
+    <!-- <div class="course-content" id="courseContent"> -->
             <!-- This will be populated dynamically -->
-            <h3>Definition</h3>
+            <!-- <h3>Definition</h3>
             <p id="courseDefinition"></p>
             <h3>Installation Guide</h3>
             <div id="courseInstallation"></div>
-        </div>
-    </div>            
+        </div> -->
+    <!-- </div> -->
   
     <div class="about-content" id="aboutContent">
         <p>Where Technology and Expertise Intersect!</p>
@@ -211,28 +213,34 @@
         document.getElementById('aboutContent').style.display = 'block';
     });
 
-    document.getElementById('courseSelect').addEventListener('change', function() {
-        const selectedCourse = this.value;
-        let content = '';
-        switch (selectedCourse) {
+    function showToolDetails(tool) {
+        let details = '';
+        switch (tool) {
             case 'Git':
-                content = "Installation Guide for Ubuntu<br>1. Update apt package index with `sudo apt update`.<br>2. Install Git with `sudo apt install git`.<br>3. Verify the installation by running `git --version`.";
+                details = 'Installation Guide for Ubuntu:<br>1. sudo apt update<br>2. sudo apt install git<br>3. git --version';
                 break;
             case 'Jenkins':
-                content = "Installation Guide for Ubuntu<br>1. Install Java with `sudo apt install openjdk-11-jre`.<br>2. Add Jenkins repository: `wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -` and then `sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'`.<br>3. Install Jenkins: `sudo apt update && sudo apt install jenkins`.<br>4. Start Jenkins with `sudo systemctl start jenkins`.<br>5. Access Jenkins from a browser using `http://localhost:8080`.";
+                details = 'Installation Guide for Ubuntu:<br>1. wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -<br>2. sudo sh -c \'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list\'<br>3. sudo apt-get update<br>4. sudo apt-get install jenkins';
                 break;
             case 'Ansible':
-                content = "Installation Guide for Ubuntu<br>1. Update apt package index: `sudo apt update`.<br>2. Install software-properties-common: `sudo apt install software-properties-common`.<br>3. Add Ansible repository: `sudo apt-add-repository --yes --update ppa:ansible/ansible`.<br>4. Install Ansible with `sudo apt install ansible`.<br>5. Verify the installation by running `ansible --version`.";
+                details = 'Installation Guide for Ubuntu:<br>1. sudo apt update<br>2. sudo apt install software-properties-common<br>3. sudo apt-add-repository --yes --update ppa:ansible/ansible<br>4. sudo apt install ansible';
                 break;
             case 'Terraform':
-                content = "Installation Guide for Ubuntu<br>1. Download Terraform from the official website.<br>2. Extract the downloaded archive.<br>3. Move the Terraform binary to `/usr/local/bin` or any directory in your `PATH`.<br>4. Verify the installation by running `terraform version`.";
+                details = 'Installation Guide for Ubuntu:<br>1. sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl<br>2. curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -<br>3. sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"<br>4. sudo apt-get update && sudo apt-get install terraform';
                 break;
-            // Additional installations for Docker and Kubernetes can be added here
+            case 'Docker':
+                details = 'Installation Guide for Ubuntu:<br>1. sudo apt update<br>2. sudo apt install apt-transport-https ca-certificates curl software-properties-common<br>3. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -<br>4. sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"<br>5. sudo apt update<br>6. sudo apt install docker-ce';
+                break;
+            case 'Kubernetes':
+                details = 'Installation Guide for Ubuntu:<br>1. sudo apt-get update<br>2. sudo apt-get install -y apt-transport-https curl<br>3. curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -<br>4. echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list<br>5. sudo apt-get update<br>6. sudo apt-get install -y kubectl';
+                break;
+            default:
+                details = '';
         }
-        document.getElementById('courseContent').innerHTML = content;
-    });
-
+        document.getElementById('toolDetails').innerHTML = details;
+    }
 </script>
 
 </body>
+</html>
 </html>
