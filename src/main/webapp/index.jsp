@@ -1,6 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <title>Unleash Efficiency, Collaboration, and High-Quality Delivery</title>
     <style>
         body {
@@ -32,7 +34,7 @@
         }
 
         /* hidden by default */
-        .about-content, .course-content {
+        .about-content, .tool-content {
             display: none;
             width: 70%;
             margin: 20px auto;
@@ -47,7 +49,7 @@
             justify-content: space-between;
         }
 
-        .course-section {
+        .tool-section {
             width: 45%;
         }
 
@@ -69,47 +71,38 @@
 
 <button id="homeButton" onclick="showHomePage()">Home</button>
 
-<div class="logo">
+ <div class="logo">
     <img src="images/logo.png" width="200" height="100" alt="Company Logo">
     <h1 class="main-title">Unleash Efficiency, Collaboration, and High-Quality Delivery!</h1>
 </div>
-
+    
 <div id="topRight">
     <span class="link" id="aboutLink">About M.I Tech LLC</span> 
     <span class="link" id="careersLink">Careers</span>
 </div>
-
+    
 <div class="content-section">
-    <div class="course-section">
+    <div class="tool-section">
         <img src="images/cartoon.jpg" alt="A student with a laptop" style="display:block; margin:auto;">
         <h2>Select DevOps Tool For Details</h2>
-        <select name="course" id="courseSelect" onchange="displayCourseDetails()">
-            <option value="" selected>Select a course...</option>
+        <select name="tool" id="toolSelect" onchange="showToolDetails(this.value)">
+            <option value="" selected>Select a tool...</option>
             <option value="Git">Git</option>
             <option value="Jenkins">Jenkins</option>
             <option value="Ansible">Ansible</option>
             <option value="Terraform">Terraform</option>
             <option value="Docker">Docker</option>
-            <option value="Kubernetes">Kubernetes</option>
+             <option value="Kubernetes">Kubernetes</option>
         </select>
         <div id="toolDetails"></div>
-    </div>>    
-
-    <!-- <div class="course-content" id="courseContent"> -->
-            <!-- This will be populated dynamically -->
-            <!-- <h3>Definition</h3>
-            <p id="courseDefinition"></p>
-            <h3>Installation Guide</h3>
-            <div id="courseInstallation"></div>
-        </div> -->
-    <!-- </div> -->
-  
+    </div> 
+      
     <div class="about-content" id="aboutContent">
         <p>Where Technology and Expertise Intersect!</p>
         <p>Our Two-Fold Mission:</p>
         <ol>
-           <li>DevOps Support: We understand that each business is unique, and so are its technological challenges. Our seasoned team boasts a rich tapestry of experience in offering bespoke DevOps support...</li>
-           <li>Education & Training: As firm believers in sharing knowledge, we are equally passionate about fostering the next generation of DevOps engineers...</li>
+            <li>DevOps Support: We understand that each business is unique, and so are its technological challenges. Our seasoned team boasts a rich tapestry of experience in offering bespoke DevOps support...</li>
+            <li>Education & Training: As firm believers in sharing knowledge, we are equally passionate about fostering the next generation of DevOps engineers...</li>
         </ol>
     </div>
 </div>
@@ -130,88 +123,24 @@
     </form>
 </div>
 
-<!-- <script>
-    function displayCourseDetails() {
-        let course = document.getElementById('courseSelect').value;
-        let definition = "";
-        let installation = "";
-
-        switch(course) {
-            case "Git":
-                definition = "Git is a distributed version-control system used for tracking changes in source code during software development.";
-                installation = "1. Download the installer from the Git official site.\n2. Follow the installation steps.";
-                break;
-
-            case "Jenkins":
-                definition = "Jenkins is an open-source automation server which enables developers to build, test, and deploy their code.";
-                installation = "1. Download Jenkins from the official website.\n2. Install and configure it.";
-                break;
-
-            case "Ansible":
-                definition = "Ansible is an open-source software provisioning, configuration management, and application-deployment tool.";
-                installation = "1. Install using pip.\n2. Set up and configure based on requirements.";
-                break;
-
-            case "Terraform":
-                definition = "Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage cloud services.";
-                installation = "1. Download Terraform CLI from the website.\n2. Unzip and install.";
-                break;
-
-            case "Docker":
-                definition = "Docker is a platform used to develop, ship, and run applications inside containers.";
-                installation = "1. Download Docker Desktop.\n2. Install and start creating containers.";
-                break;
-
-            case "Kubernetes":
-                definition = "Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.";
-                installation = "1. Set up a kubernetes cluster.\n2. Use kubectl to manage.";
-                break;
-        }
-
-        if (definition) {
-            document.getElementById('courseContent').style.display = 'block';
-            document.getElementById('courseDefinition').innerText = definition;
-            document.getElementById('courseInstallation').innerText = installation;
-        } else {
-            document.getElementById('courseContent').style.display = 'none';
-        }
-    }
-    function showHomePage() {
-        document.getElementById('aboutContent').style.display = 'none';
-        if(document.getElementById('courseContent')){
-            document.getElementById('courseContent').style.display = 'none';
-        }
-        document.querySelector('.logo').style.display = 'block';
-        document.querySelector('.content-section').style.display = 'block';
-        document.getElementById('topRight').style.display = 'block';
-    }
-
-    document.getElementById('aboutLink').addEventListener('click', function() {
-        document.getElementById('aboutContent').style.display = 'block';
-        document.querySelector('.logo').style.display = 'none';
-        document.querySelector('.content-section').style.display = 'none';
-        document.getElementById('topRight').style.display = 'none';
-    });
-
-    // Placeholder for Careers. Can be filled in later.
-    document.getElementById('careersLink').addEventListener('click', function() {
-        // ... functionality to display careers content ...
-    });
-</script> -->
-
 <script>
-    function showHomePage() {
-        document.getElementById('aboutContent').style.display = 'none';
-        document.getElementById('courseContent').style.display = 'none';
-        document.querySelector('.logo').style.display = 'block';
-        document.querySelector('.content-section').style.display = 'block';
-    }
-
+    document.getElementById('homeButton').addEventListener('click', showHomePage);
     document.getElementById('aboutLink').addEventListener('click', function() {
         document.querySelector('.logo').style.display = 'none';
         document.querySelector('.content-section').style.display = 'none';
         document.getElementById('aboutContent').style.display = 'block';
     });
+    document.getElementById('toolSelect').addEventListener('change', function() {
+        showToolDetails(this.value);
+    });
+
+    function showHomePage() {
+        document.getElementById('aboutContent').style.display = 'none';
+        document.querySelector('.logo').style.display = 'block';
+        document.querySelector('.content-section').style.display = 'block';
+        document.getElementById('toolSelect').value = ""; // Reset tool dropdown
+        document.getElementById('toolDetails').innerHTML = ''; // Clear tool details
+    }
 
     function showToolDetails(tool) {
         let details = '';
@@ -242,5 +171,4 @@
 </script>
 
 </body>
-</html>
 </html>
