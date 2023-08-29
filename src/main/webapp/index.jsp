@@ -79,7 +79,7 @@
     <span class="link" id="careersLink">Careers</span>
 </div>
 
-<div class="content-section">
+<!-- <div class="content-section">
     <div class="course-section">
         <img src="images/cartoon.jpg" alt="A student with a laptop" style="display:block; margin:auto;">
         <h2>Select Course For Details</h2>
@@ -91,8 +91,29 @@
                 <option value="Terraform" <%= "Terraform".equals(request.getParameter("course")) ? "selected" : "" %>>Terraform</option>
                 <option value="Docker" <%= "Docker".equals(request.getParameter("course")) ? "selected" : "" %>>Docker</option>
                 <option value="Kubernetes" <%= "Kubernetes".equals(request.getParameter("course")) ? "selected" : "" %>>Kubernetes</option>
-            </select>
-            <input type="submit" value="Get Definition & Installation Steps">
+            </select> -->
+<div class="content-section">
+    <div class="course-section">
+        <img src="images/cartoon.jpg" alt="A student with a laptop" style="display:block; margin:auto;">
+        <h2>Select Course For Details</h2>
+        <select name="course" id="courseSelect" onchange="displayCourseDetails()">
+            <option value="" selected>Select a course...</option>
+            <option value="Git">Git</option>
+            <option value="Jenkins">Jenkins</option>
+            <option value="Ansible">Ansible</option>
+            <option value="Terraform">Terraform</option>
+            <option value="Docker">Docker</option>
+            <option value="Kubernetes">Kubernetes</option>
+        </select>
+
+        <div class="course-content" id="courseContent" style="display: none;">
+            <h3>Definition</h3>
+            <p id="courseDefinition"></p>
+            <h3>Installation Guide</h3>
+            <pre id="courseInstallation"></pre>
+        </div>
+    </div>            
+            <!-- <input type="submit" value="Get Definition & Installation Steps">
         </form>
         <br>
         <% if (request.getAttribute("definition") != null) { %>
@@ -107,7 +128,7 @@
                 <pre><%= request.getAttribute("installation") %></pre>
             </div>
         <% } %>
-    </div>
+    </div> -->
 
     <div class="about-content" id="aboutContent">
         <p>Where Technology and Expertise Intersect!</p>
@@ -135,7 +156,7 @@
     </form>
 </div>
 
-<script>
+<!-- <script>
     function showHomePage() {
         document.getElementById('aboutContent').style.display = 'none';
         if(document.getElementById('courseContent')){
@@ -155,7 +176,53 @@
     // Placeholder for Careers. Can be filled in later.
     document.getElementById('careersLink').addEventListener('click', function() {
         // ... functionality to display careers content ...
-    });
+    }); -->
+<script>
+    function displayCourseDetails() {
+        let course = document.getElementById('courseSelect').value;
+        let definition = "";
+        let installation = "";
+
+        switch(course) {
+            case "Git":
+                definition = "Git is a distributed version-control system used for tracking changes in source code during software development.";
+                installation = "1. Download the installer from the Git official site.\n2. Follow the installation steps.";
+                break;
+
+            case "Jenkins":
+                definition = "Jenkins is an open-source automation server which enables developers to build, test, and deploy their code.";
+                installation = "1. Download Jenkins from the official website.\n2. Install and configure it.";
+                break;
+
+            case "Ansible":
+                definition = "Ansible is an open-source software provisioning, configuration management, and application-deployment tool.";
+                installation = "1. Install using pip.\n2. Set up and configure based on requirements.";
+                break;
+
+            case "Terraform":
+                definition = "Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage cloud services.";
+                installation = "1. Download Terraform CLI from the website.\n2. Unzip and install.";
+                break;
+
+            case "Docker":
+                definition = "Docker is a platform used to develop, ship, and run applications inside containers.";
+                installation = "1. Download Docker Desktop.\n2. Install and start creating containers.";
+                break;
+
+            case "Kubernetes":
+                definition = "Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.";
+                installation = "1. Set up a kubernetes cluster.\n2. Use kubectl to manage.";
+                break;
+        }
+
+        if (definition) {
+            document.getElementById('courseContent').style.display = 'block';
+            document.getElementById('courseDefinition').innerText = definition;
+            document.getElementById('courseInstallation').innerText = installation;
+        } else {
+            document.getElementById('courseContent').style.display = 'none';
+        }
+    }    
 </script>
 
 </body>
