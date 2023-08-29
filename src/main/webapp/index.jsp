@@ -6,7 +6,7 @@
     <title>Unleash Efficiency, Collaboration, and High-Quality Delivery</title>
     <style>
         body {
-            background-image: url("images/bk_ground.png");
+            background-image: url("images/background.jpg");
             background-repeat: repeat;
             background-size: auto;
             position: relative;
