@@ -79,19 +79,6 @@
     <span class="link" id="careersLink">Careers</span>
 </div>
 
-<!-- <div class="content-section">
-    <div class="course-section">
-        <img src="images/cartoon.jpg" alt="A student with a laptop" style="display:block; margin:auto;">
-        <h2>Select Course For Details</h2>
-        <form action="course" method="post">
-            <select name="course">
-                <option value="Git" <%= "Git".equals(request.getParameter("course")) ? "selected" : "" %>>Git</option>
-                <option value="Jenkins" <%= "Jenkins".equals(request.getParameter("course")) ? "selected" : "" %>>Jenkins</option>
-                <option value="Ansible" <%= "Ansible".equals(request.getParameter("course")) ? "selected" : "" %>>Ansible</option>
-                <option value="Terraform" <%= "Terraform".equals(request.getParameter("course")) ? "selected" : "" %>>Terraform</option>
-                <option value="Docker" <%= "Docker".equals(request.getParameter("course")) ? "selected" : "" %>>Docker</option>
-                <option value="Kubernetes" <%= "Kubernetes".equals(request.getParameter("course")) ? "selected" : "" %>>Kubernetes</option>
-            </select> -->
 <div class="content-section">
     <div class="course-section">
         <img src="images/cartoon.jpg" alt="A student with a laptop" style="display:block; margin:auto;">
@@ -106,30 +93,15 @@
             <option value="Kubernetes">Kubernetes</option>
         </select>
 
-        <div class="course-content" id="courseContent" style="display: none;">
-            <h3>Definition</h3>
+        <div class="course-content" id="courseContent">
+            <!-- This will be populated dynamically -->
+            <!-- <h3>Definition</h3>
             <p id="courseDefinition"></p>
-            <h3 style="white-space: nowrap;">Installation Guide</h3>
-            <pre id="courseInstallation"></pre>
+            <h3>Installation Guide</h3>
+            <div id="courseInstallation"></div> -->
         </div>
     </div>            
-            <!-- <input type="submit" value="Get Definition & Installation Steps">
-        </form>
-        <br>
-        <% if (request.getAttribute("definition") != null) { %>
-            <script>
-                document.querySelector('.logo').style.display = 'none';
-                document.querySelector('.content-section').style.display = 'none';
-            </script>
-            <div class="course-content" id="courseContent">
-                <h3>Definition</h3>
-                <p><%= request.getAttribute("definition") %></p>
-                <h3>Installation Guide</h3>
-                <pre><%= request.getAttribute("installation") %></pre>
-            </div>
-        <% } %>
-    </div> -->
-
+  
     <div class="about-content" id="aboutContent">
         <p>Where Technology and Expertise Intersect!</p>
         <p>Our Two-Fold Mission:</p>
@@ -157,27 +129,6 @@
 </div>
 
 <!-- <script>
-    function showHomePage() {
-        document.getElementById('aboutContent').style.display = 'none';
-        if(document.getElementById('courseContent')){
-            document.getElementById('courseContent').style.display = 'none';
-        }
-        document.querySelector('.logo').style.display = 'block';
-        document.querySelector('.content-section').style.display = 'block';
-    }
-
-    document.getElementById('aboutLink').addEventListener('click', function() {
-        console.log("About link clicked!");
-        document.getElementById('aboutContent').style.display = 'block';
-        document.querySelector('.logo').style.display = 'none';
-        document.querySelector('.content-section').style.display = 'none';
-    });
-
-    // Placeholder for Careers. Can be filled in later.
-    document.getElementById('careersLink').addEventListener('click', function() {
-        // ... functionality to display careers content ...
-    }); -->
-<script>
     function displayCourseDetails() {
         let course = document.getElementById('courseSelect').value;
         let definition = "";
@@ -244,6 +195,43 @@
     document.getElementById('careersLink').addEventListener('click', function() {
         // ... functionality to display careers content ...
     });
+</script> -->
+
+<script>
+    function showHomePage() {
+        document.getElementById('aboutContent').style.display = 'none';
+        document.getElementById('courseContent').style.display = 'none';
+        document.querySelector('.logo').style.display = 'block';
+        document.querySelector('.content-section').style.display = 'block';
+    }
+
+    document.getElementById('aboutLink').addEventListener('click', function() {
+        document.querySelector('.logo').style.display = 'none';
+        document.querySelector('.content-section').style.display = 'none';
+        document.getElementById('aboutContent').style.display = 'block';
+    });
+
+    document.getElementById('courseSelect').addEventListener('change', function() {
+        const selectedCourse = this.value;
+        let content = '';
+        switch (selectedCourse) {
+            case 'Git':
+                content = "Installation Guide for Ubuntu<br>1. Update apt package index with `sudo apt update`.<br>2. Install Git with `sudo apt install git`.<br>3. Verify the installation by running `git --version`.";
+                break;
+            case 'Jenkins':
+                content = "Installation Guide for Ubuntu<br>1. Install Java with `sudo apt install openjdk-11-jre`.<br>2. Add Jenkins repository: `wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -` and then `sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'`.<br>3. Install Jenkins: `sudo apt update && sudo apt install jenkins`.<br>4. Start Jenkins with `sudo systemctl start jenkins`.<br>5. Access Jenkins from a browser using `http://localhost:8080`.";
+                break;
+            case 'Ansible':
+                content = "Installation Guide for Ubuntu<br>1. Update apt package index: `sudo apt update`.<br>2. Install software-properties-common: `sudo apt install software-properties-common`.<br>3. Add Ansible repository: `sudo apt-add-repository --yes --update ppa:ansible/ansible`.<br>4. Install Ansible with `sudo apt install ansible`.<br>5. Verify the installation by running `ansible --version`.";
+                break;
+            case 'Terraform':
+                content = "Installation Guide for Ubuntu<br>1. Download Terraform from the official website.<br>2. Extract the downloaded archive.<br>3. Move the Terraform binary to `/usr/local/bin` or any directory in your `PATH`.<br>4. Verify the installation by running `terraform version`.";
+                break;
+            // Additional installations for Docker and Kubernetes can be added here
+        }
+        document.getElementById('courseContent').innerHTML = content;
+    });
+
 </script>
 
 </body>
