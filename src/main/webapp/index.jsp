@@ -143,41 +143,47 @@
     }
 
     function showToolDetails(tool) {
-        let description = '';
-        let installation = 'Installation Guide for Ubuntu:<br>';
-        switch (tool) {
-            case 'Git':
-                description = 'Git is a distributed version control system (VCS) that helps track changes in source code during software development. ' +
-                              'It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. ' +
-                              'Here are some key points about Git:<br><br>' +
-                              '<strong>Distributed Version Control:</strong> Unlike some other version control systems, Git is distributed. This means that every developer\'s working copy of the code is also a repository that can contain the full history of all changes. This model allows for more flexibility and collaborative workflows.<br>' +
-                              '<strong>Branching and Merging:</strong> One of Git\'s most powerful features is its ability to handle branches and merges efficiently. Developers can easily create branches to work on new features or bug fixes and can merge these branches back into the main codebase when the work is complete.<br>' +
-                              '<strong>Speed:</strong> Git is designed with performance in mind. Operations such as branching and merging are extremely fast, which encourages workflows that branch often, even for small changes.<br>' +
-                              '<strong>Data Integrity:</strong> Git uses a data model that ensures high integrity for the versioned content. Every file and commit is check-summed using the SHA-1 hash algorithm, which guarantees the consistency and integrity of data over time.<br>' +
-                              '<strong>Staging Area:</strong> Git has an intermediate area called the "staging area" or "index" where changes can be grouped together before committing them to the repository. This allows developers to craft their commits for clarity and purpose.<br>' +
-                              '<strong>Non-linear Development:</strong> Git supports non-linear development through its robust handling of branches, allowing multiple paths of development to occur simultaneously.<br>' +
-                              '<strong>Collaboration:</strong> Git’s distributed nature allows multiple developers to work on the same project concurrently. Combined with platforms like GitHub or GitLab, it provides a centralized place for collaboration, code review, issue tracking, and more.<br>' +
-                              '<strong>Open Source:</strong> Git is free and open-source software. Its development is supported by a vast community that continuously works on improvements and new features.<br>' +
-                              'Git was initially designed and developed by Linus Torvalds, the creator of the Linux kernel, in 2005, for the development of the Linux kernel itself. Since then, it has gained widespread acceptance in the software community, making it the de facto standard for version control in many projects and organizations.';
-                installation += '1. sudo apt update<br>2. sudo apt install git<br>3. git --version';
-                break;
-            case 'Jenkins':
-                details = 'Installation Guide for Ubuntu:<br>1. wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -<br>2. sudo sh -c \'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list\'<br>3. sudo apt-get update<br>4. sudo apt-get install jenkins';
-                break;
-            case 'Ansible':
-                details = 'Installation Guide for Ubuntu:<br>1. sudo apt update<br>2. sudo apt install software-properties-common<br>3. sudo apt-add-repository --yes --update ppa:ansible/ansible<br>4. sudo apt install ansible';
-                break;
-            case 'Terraform':
-                details = 'Installation Guide for Ubuntu:<br>1. sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl<br>2. curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -<br>3. sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"<br>4. sudo apt-get update && sudo apt-get install terraform';
-                break;
-            case 'Docker':
-                details = 'Installation Guide for Ubuntu:<br>1. sudo apt update<br>2. sudo apt install apt-transport-https ca-certificates curl software-properties-common<br>3. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -<br>4. sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"<br>5. sudo apt update<br>6. sudo apt install docker-ce';
-                break;
-            case 'Kubernetes':
-                details = 'Installation Guide for Ubuntu:<br>1. sudo apt-get update<br>2. sudo apt-get install -y apt-transport-https curl<br>3. curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -<br>4. echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list<br>5. sudo apt-get update<br>6. sudo apt-get install -y kubectl';
-                break;
-            default:
-                details = '';
+    let description = '';
+    let installation = 'Installation Guide for Ubuntu:<br>';
+
+    switch (tool) {
+        case 'Git':
+            description = 'Git is a distributed version control system (VCS) that helps track changes in source code during software development. ' +
+                          'It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. ' +
+                          'Here are some key points about Git:<br><br>' +
+                          '<strong>Distributed Version Control:</strong> Unlike some other version control systems, Git is distributed. This means that every developer\'s working copy of the code is also a repository that can contain the full history of all changes. This model allows for more flexibility and collaborative workflows.<br>' +
+                          '<strong>Branching and Merging:</strong> One of Git\'s most powerful features is its ability to handle branches and merges efficiently. Developers can easily create branches to work on new features or bug fixes and can merge these branches back into the main codebase when the work is complete.<br>' +
+                          '<strong>Speed:</strong> Git is designed with performance in mind. Operations such as branching and merging are extremely fast, which encourages workflows that branch often, even for small changes.<br>' +
+                          '<strong>Data Integrity:</strong> Git uses a data model that ensures high integrity for the versioned content. Every file and commit is check-summed using the SHA-1 hash algorithm, which guarantees the consistency and integrity of data over time.<br>' +
+                          '<strong>Staging Area:</strong> Git has an intermediate area called the "staging area" or "index" where changes can be grouped together before committing them to the repository. This allows developers to craft their commits for clarity and purpose.<br>' +
+                          '<strong>Non-linear Development:</strong> Git supports non-linear development through its robust handling of branches, allowing multiple paths of development to occur simultaneously.<br>' +
+                          '<strong>Collaboration:</strong> Git’s distributed nature allows multiple developers to work on the same project concurrently. Combined with platforms like GitHub or GitLab, it provides a centralized place for collaboration, code review, issue tracking, and more.<br>' +
+                          '<strong>Open Source:</strong> Git is free and open-source software. Its development is supported by a vast community that continuously works on improvements and new features.<br>' +
+                          'Git was initially designed and developed by Linus Torvalds, the creator of the Linux kernel, in 2005, for the development of the Linux kernel itself. Since then, it has gained widespread acceptance in the software community, making it the de facto standard for version control in many projects and organizations.';
+            installation += '1. sudo apt update<br>2. sudo apt install git<br>3. git --version';
+            break;
+        case 'Jenkins':
+            description = 
+            installation = 'Installation Guide for Ubuntu:<br>1. wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -<br>2. sudo sh -c \'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list\'<br>3. sudo apt-get update<br>4. sudo apt-get install jenkins';
+            break;            
+        case 'Ansible':
+            description = 
+            installation = 'Installation Guide for Ubuntu:<br>1. sudo apt update<br>2. sudo apt install software-properties-common<br>3. sudo apt-add-repository --yes --update ppa:ansible/ansible<br>4. sudo apt install ansible';
+            break;
+        case 'Terraform':
+            description = 
+            installation = 'Installation Guide for Ubuntu:<br>1. sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl<br>2. curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -<br>3. sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"<br>4. sudo apt-get update && sudo apt-get install terraform';
+            break;
+        case 'Docker':
+            description = 
+            installation = 'Installation Guide for Ubuntu:<br>1. sudo apt update<br>2. sudo apt install apt-transport-https ca-certificates curl software-properties-common<br>3. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -<br>4. sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"<br>5. sudo apt update<br>6. sudo apt install docker-ce';
+            break;
+        case 'Kubernetes':
+            description = 
+            installation = 'Installation Guide for Ubuntu:<br>1. sudo apt-get update<br>2. sudo apt-get install -y apt-transport-https curl<br>3. curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -<br>4. echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list<br>5. sudo apt-get update<br>6. sudo apt-get install -y kubectl';
+            break;
+        default:
+            details = '';
         }
         document.getElementById('toolDetails').innerHTML = details;
     }
