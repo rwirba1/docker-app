@@ -164,7 +164,7 @@
 
     function showToolDetails(tool) {
         let details = '';
-        let imgagePath = '';
+        let imagePath = '';
         switch (tool) {
             case 'Git':
                 details = `
@@ -187,7 +187,7 @@
                2. sudo apt install git<br>
                3. git --version
                `;
-               imgagePath = 'images/git.jpg'
+               imagePath = 'images/git.jpg'
                break;
 
             case 'Jenkins':
@@ -215,7 +215,7 @@
                6. sudo systemctl enable jenkins<br>
                7. After installing Jenkins, it will run on the default port 8080. You can access it by navigating to http://your_server_ip:8080. On the first run, it will ask for an unlock key which can be found in /var/lib/jenkins/secrets/initialAdminPassword. After this, you can set up the initial admin user and install the desired plugins based on your needs.<br>
                `;
-               imgagePath = 'images/jenkins.jpg'
+               imagePath = 'images/jenkins.jpg'
                break;               
 
             case 'Ansible':
@@ -241,7 +241,7 @@
                4. sudo apt install ansible<br>
                5. ansible --version
                `;
-               imgagePath = 'images/ansible.png'
+               imagePath = 'images/ansible.png'
                break;               
 
             case 'Terraform':
@@ -269,7 +269,7 @@
                6. sudo apt-get install terraform<br>
                7. git --version
                `;
-               imgagePath = 'images/terraform.png'
+               imagePath = 'images/terraform.png'
                break;               
 
             case 'Docker':
@@ -297,7 +297,7 @@
                6. sudo apt install docker-ce<br>
                7. docker --version
                `;
-               imgagePath = 'images/docker.png'
+               imagePath = 'images/docker.png'
                break;               
 
             case 'Kubernetes':
@@ -324,7 +324,7 @@
                6. sudo apt-get install -y kubectl kubeadm kubelet kubernetes-cni<br>
                7. docker --version
                `;
-               imgagePath = 'images/kubernetes.png'
+               imagePath = 'images/kubernetes.png'
                break;               
             default:
                details = '';
