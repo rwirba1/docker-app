@@ -213,6 +213,13 @@
             details = '';
         }
         document.getElementById('toolDetails').innerHTML = details;
+        let toolImageElem = document.getElementById('toolImage');
+        if (imagePath) {
+            toolImageElem.src = imagePath;
+            toolImageElem.style.display = 'block';
+        } else {
+            toolImageElem.style.display = 'none';
+        }
     }
 </script>
 
