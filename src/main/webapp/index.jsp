@@ -74,6 +74,8 @@
             position: absolute;
             top: 10px;
             left: 10px;
+            background-color: whitesmoke;
+            color: black;
         }
 
     </style>
