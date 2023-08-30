@@ -5,8 +5,12 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <title>Unleash Efficiency, Collaboration, and High-Quality Delivery</title>
     <style>
+        * {
+            color: white;
+            font-weight: bold;
+        }
         body {
-            background-image: url("images/background.jpg");
+            background-image: url("images/background1.jpg");
             background-repeat: repeat;
             background-size: auto;
             position: relative;
