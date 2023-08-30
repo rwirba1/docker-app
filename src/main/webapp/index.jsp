@@ -12,6 +12,7 @@
         }
 
         #toolSelect {
+            color: black;
             background-color: whitesmoke;
         }
 
