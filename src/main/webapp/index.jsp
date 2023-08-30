@@ -5,7 +5,13 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <title>Unleash Efficiency, Collaboration, and High-Quality Delivery</title>
     <style>
-        * {
+        #toolSelect {
+            font-weight: 900;
+            font-size: 1.2em;
+            color: black;
+            background-color: whitesmoke;
+        }
+        .link, a, button {
             color: white;
             font-weight: bold;
         }
