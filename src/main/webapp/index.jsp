@@ -16,6 +16,12 @@
             background-color: whitesmoke;
         }
 
+        #toolImage {
+            max-width: 300px;
+            float: right;
+            margin: 20px;
+        }
+
         body {
             background-image: url("images/background1.jpg");
             background-repeat: repeat;
@@ -98,6 +104,7 @@
     <div class="tool-section">
         <img src="images/cartoon.jpg" alt="A student with a laptop" style="display:block; margin:auto;">
         <h2>Select DevOps Tool For Details</h2>
+        <img id="toolImage" src="" alt="Tool Image" style="display: none; width: 300px; margin: 20px auto;">
         <select name="tool" id="toolSelect" onchange="showToolDetails(this.value)">
             <option value="" selected>Select a tool...</option>
             <option value="Git">Git</option>
@@ -157,6 +164,7 @@
 
     function showToolDetails(tool) {
         let details = '';
+        let imgagePath = '';
         switch (tool) {
             case 'Git':
                 details = `
@@ -179,6 +187,7 @@
                2. sudo apt install git<br>
                3. git --version
                `;
+               imgagePath = 'images/git.png'
             break;
         case 'Jenkins':
             description = 
