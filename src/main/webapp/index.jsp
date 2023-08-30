@@ -5,16 +5,16 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <title>Unleash Efficiency, Collaboration, and High-Quality Delivery</title>
     <style>
-        #toolSelect {
+        body, h1, h2, h3, h4, h5, h6, p, a, span, button, label, option, select {
             font-weight: 900;
             font-size: 1.2em;
-            color: black;
+            color: whitesmoke;
+        }
+
+        #toolSelect {
             background-color: whitesmoke;
         }
-        .link, a, button {
-            color: white;
-            font-weight: bold;
-        }
+
         body {
             background-image: url("images/background1.jpg");
             background-repeat: repeat;
