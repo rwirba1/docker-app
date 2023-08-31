@@ -16,6 +16,31 @@
     </dependency>
   </dependencies>
 
+  <distributionManagement>
+    <repository>
+      <id>TechApp-release</id>
+      <url>http://http://54.175.224.68:8081/repository/TechApp-release</url>
+    </repository>
+    <snapshotRepository>
+      <id>TechApp-snapshot</id>
+      <url>http://54.175.224.68:8081/repository/TechApp-snapshots</url>
+    </snapshotRepository>
+  </distributionManagement> 
+
+  <repositories>
+        <!-- Group repository for resolving dependencies -->
+        <repository>
+            <id>TechApp-maven-group</id>
+            <url>http://54.175.224.68:8081/repository/TechApp-maven-group/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
   <build>
     <finalName>TechApp</finalName>
     <plugins>
@@ -39,6 +64,12 @@
           <warSourceDirectory>src/main/webapp</warSourceDirectory>
           <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
         </configuration>
+      </plugin>
+
+      <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>3.7.0.1746</version>              
       </plugin>
     </plugins>
   </build>
