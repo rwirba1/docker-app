@@ -23,7 +23,7 @@
         }
 
         body {
-            background-image: url("images/background1.jpg");
+            background-image: url("images/view.jpg");
             background-repeat: repeat;
             background-size: auto;
             position: relative;
